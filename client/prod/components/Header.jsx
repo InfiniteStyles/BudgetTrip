@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom';
 import Popover from 'material-ui/Popover'
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
-import Menu from 'material-ui/Menu';
+import DropDownMenu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import Profile from './Profile.jsx';
 
 const style = {
   display: 'flex',
-  margin: '16, 32, 16, 0'
+  margin: '16, 32, 16, 0',
+  style: {
+    color: 'white',
+    background: 'green'
+  }
 };
 
 class Header extends React.Component {
@@ -47,12 +51,13 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div>
-        <RaisedButton
+      <div className="header_container">
+        <a class="header_logo--button" href="/"/>
+        <RaisedButton className="nav_menu"
           onClick={this.handleTouchTap}
           label="Account Info"
         />
-        <Popover
+        <Popover 
           open={this.state.open}
           anchorEl={this.state.anchorEl}
           anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
@@ -60,11 +65,11 @@ class Header extends React.Component {
           onRequestClose={this.handleRequestClose}
         >
           <Paper style={style}>
-            <Menu>
+            <DropDownMenu>
               <MenuItem primaryText="Trip History" />
               <MenuItem primaryText="User Profile" />
               <MenuItem onClick={(e) => {this.handleLogout(e)}} primaryText="Logout" />
-            </Menu>
+            </DropDownMenu>
           </Paper>
         </Popover>
 

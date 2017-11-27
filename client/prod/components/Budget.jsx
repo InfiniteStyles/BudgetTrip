@@ -135,7 +135,7 @@ class Budget extends React.Component {
                 }
               </TableHeaderColumn>
             </TableRow>
-            <TableRow>
+            <TableRow className="table_labels">
               <TableHeaderColumn>Name</TableHeaderColumn>
               <TableHeaderColumn>Description</TableHeaderColumn>
               <TableHeaderColumn>Cost</TableHeaderColumn>

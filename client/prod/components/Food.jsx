@@ -67,14 +67,16 @@ export default class Food extends React.Component {
 
   render() {
     return (
-      <div>
-        <Paper styles={styles.paper} zDepth={5}>
-          <img src={this.props.restaurant.restaurant.thumb} alt={this.props.restaurant.restaurant.name} />
-          <p>Address: {this.props.restaurant.restaurant.location.address}</p>
-          <p>Restaurant: {this.props.restaurant.restaurant.name}</p>
-          <p>Cuisine: {this.props.restaurant.restaurant.cuisines}</p>
-          <p>Average Cost (For two): {this.props.restaurant.restaurant.average_cost_for_two}</p>
+      <div className="food_container">
+        <div className="foodImg_container">
+          <img className="food_img" src={this.props.restaurant.restaurant.thumb} alt={this.props.restaurant.restaurant.name} />
+        </div>
+          <p className="food_title">Restaurant: {this.props.restaurant.restaurant.name}</p>
+          <p className="food_perex">Cuisine: {this.props.restaurant.restaurant.cuisines}</p>
+          <p className="food_price">Average Cost (For two): {this.props.restaurant.restaurant.average_cost_for_two}</p>
+          <p className="food_hours">Address: {this.props.restaurant.restaurant.location.address}</p>
           <Checkbox
+            className="food_addButton"
             id={this.props.id}
             checkedIcon={<ActionFavorite />}
             uncheckedIcon={<ActionFavoriteBorder />}
@@ -84,7 +86,6 @@ export default class Food extends React.Component {
               this.updateCheck(e);
             }}
           />
-        </Paper>
       </div>
     );
   }

@@ -10,6 +10,10 @@ export default class About extends React.Component {
 	      Let us help simplify your vacation.<br/>
 	      BudgetTrip helps plan travel, hotels, restaurants, and events all in one place.
 	      So that you can have a wonderful trip and make it home with money to spare.</p>
+	      <h6>Anto Wiwarsono</h6>
+	      <h6>Anton Shtylman</h6>
+	      <h6>Jacob Seo</h6>
+	      <h6>Luke Garner</h6>
 	    </div>
     </div>)
   }

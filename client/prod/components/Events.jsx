@@ -69,26 +69,25 @@ export default class Events extends React.Component {
 
   render() {
     return (
-      <div>
-        <Paper styles={styles.paper} zDepth={5}>
-          <img src={this.props.event.image_url} alt={this.props.event.name} />
-          <p>Event: {this.props.event.name}</p>
-          <p>Category: {this.props.event.category}</p>
-          <p>Description: {this.props.event.description}</p>
-          <p>Cost: {this.props.event.cost}</p>
-          <p>Start time: {this.props.event.time_start}</p>
-          <p>End time: {this.props.event.time_end}</p>
-          <Checkbox
-            id={this.props.id}
-            checkedIcon={<ActionFavorite />}
-            uncheckedIcon={<ActionFavoriteBorder />}
-            label="Add Event"
-            styles={styles.favoriteCheckbox}
-            onCheck={e => {
-              this.updateCheck(e);
-            }}
-          />
-        </Paper>
+      <div className="event_container">
+        <div className="eventImg_container">
+          <img className="event_img" src={this.props.event.image_url} alt={this.props.event.name} />
+        </div>
+        <p className="event_title">Event: {this.props.event.name}</p>
+        <p className="event_perex">Description: {this.props.event.description}</p>
+        <p className="event_price">Cost: {this.props.event.cost}</p>
+        <p className="event_hours">Start time: {this.props.event.time_start} --- End time: {this.props.event.time_end}</p>
+        <Checkbox
+          className="event_addButton"
+          id={this.props.id}
+          checkedIcon={<ActionFavorite />}
+          uncheckedIcon={<ActionFavoriteBorder />}
+          label="Add Event"
+          styles={styles.favoriteCheckbox}
+          onCheck={e => {
+            this.updateCheck(e);
+          }}
+        />
       </div>
     );
   }

@@ -68,25 +68,25 @@ class Travel extends React.Component {
 
   render() {
     return (
-      <div>
-        <Paper styles={styles.paper} zDepth={5}>
-          <img src={this.props.travel.place.picture} alt={this.props.travel.place.name} />
-          <h3>{this.props.travel.place.name}</h3>
-          <p>{this.props.travel.place.perex}</p>
-          <p>{this.props.travel.place.admission}</p>
-          <p>{this.props.travel.place.star_rating}</p>
-          <p>{this.props.travel.place.opening_hours}</p>
-          <Checkbox
-            id={this.props.id}
-            checkedIcon={<ActionFavorite />}
-            uncheckedIcon={<ActionFavoriteBorder />}
-            label="Add Place"
-            style={styles.checkbox}
-            onCheck={e => {
-              this.updateCheck(e);
-            }}
-          />
-        </Paper>
+      <div className="travel_container">
+        <div className="travelImg_container">
+          <img className="travel_img" src={this.props.travel.place.picture} alt={this.props.travel.place.name} />
+        </div>
+        <h3 className="travel_title">{this.props.travel.place.name}</h3>
+        <p className="travel_perex">{this.props.travel.place.perex}</p>
+        <p className="travel_price">{this.props.travel.place.admission}</p>
+        <p className="travel_hours">{this.props.travel.place.opening_hours}</p>
+        <Checkbox
+          className="travel_addButton"
+          id={this.props.id}
+          checkedIcon={<ActionFavorite />}
+          uncheckedIcon={<ActionFavoriteBorder />}
+          label="Add Place"
+          style={styles.checkbox}
+          onCheck={e => {
+            this.updateCheck(e);
+          }}
+        />
       </div>
     );
   }

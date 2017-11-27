@@ -27,7 +27,7 @@
 	top: 850px;
 	font-size: 20px;
 	padding: 10px;
-	background: #bd7d4b;
+	background: #006064;
 	color: white;
 	position:absolute;
 	width :300px;
@@ -42,9 +42,9 @@
 	left: 10%;
 	width: 300px;
 	height: 375px;
-	background: #c32231;
+	background: #B2EBF2;
 	border: 3px solid tan;
-	color: #bd7d4b;
+	color: #006064;
 }
 
 .about-us h3 {
@@ -53,13 +53,194 @@
 	margin: 0 0 10px 0;
 }
 
+
+/* budget component */
 .budget {
 	position: fixed;
 	bottom: 0vh;
+}
+
+.table_labels {
+	background: rgb(0, 188, 212);
+}
+
+.table_labels th {
+	color: white !important;
+	font-size: 22px !important;
+	text-align: center !important;
+	text-decoration: underline;
+	font-weight: bold;
+	vertical-align: middle !important;
 
 }
 
 .top-section {
 	background: url('../img/Perone.jpg');
 	background-size: cover;
+}
+
+table {
+	vertical-align: middle !important;
+}
+
+tbody td {
+		vertical-align: middle !important;
+
+	text-align: center !important;
+	border: 1px solid #006064;
+}
+
+/* Travel Activities */
+.travel_container, .food_container, .event_container {
+	display: grid;
+	justify-items: center;
+	grid-template-columns: [one] 550px [two] auto;
+	grid-gap: 7px 25px;
+	grid-template-rows: [row-one] 100px [row-two] 15% [row-three] 25% [row-four] auto;
+	width: 97%;
+	overflow: hidden;
+	margin: 15px;
+	padding: 0 25px 25px 0;
+	box-shadow: 0 5px 10px #777;
+	border-radius: 25px;
+}
+
+.travel_container:nth-child(odd), .food_container:nth-child(odd), .event_container:nth-child(odd) {
+	background: #F57F17;
+}
+
+.travel_container:nth-child(even), .food_container:nth-child(even), .event_container:nth-child(even) {
+	background: #FFC107;
+}
+
+.travelImg_container, .foodImg_container, .eventImg_container {
+
+	width: 550px;
+	max-height: 550px;
+	position: relative;
+	overflow: hidden;
+	grid-column: one;
+	grid-row: 1 / 4;
+	background: #5a749e;
+	border-bottom-right-radius: 25px;
+
+}
+
+.travel_container div img, .food_container div img, .event_container div img {
+	margin: auto;
+	width: 100%;
+	overflow: hidden;
+	object-fit: cover;
+
+}
+
+.travelImg_container:hover, .foodImg_container:hover, .eventImg_container:hover {
+transform: scale(1.5);
+transition: 1s;
+filter: sepia(60%);
+overflow: visible;
+}
+
+.travel_title, .travel_perex, .travel_price, .travel_hours {
+	grid-column: 2;
+	overflow: hidden;
+	border-bottom: 1px solid white;
+
+}
+
+.food_title, .food_perex, .food_price, .food_hours {
+	grid-column: 2;
+	overflow: hidden;
+	border-bottom: 1px solid white;
+}
+
+.event_title, .event_perex, .event_price, .event_hours {
+	grid-column: 2;
+	overflow: hidden;
+	border-bottom: 1px solid white;
+}
+
+.travel_title, .food_title, .event_title {
+	grid-row: 1;
+	font-size: 28px;
+	overflow: hidden;
+
+}
+
+.travel_perex, .food_perex, .event_perex {
+	grid-row: 2 / 3;
+	overflow: hidden;
+}
+
+.travel_perex::before {
+	content: 'Description: ';
+	font-weight: bold;
+}
+
+.travel_price, .food_price, .event_price {
+	grid-row: 4;
+	overflow: hidden;
+	border-bottom: none;
+}
+
+.travel_price::before {
+	content: 'Pricing: ';
+	font-weight: bold;
+}
+
+.travel_hours, .food_hours, .event_hours {
+	grid-row: 3/4;
+	overflow: hidden;
+}
+
+.travel_hours::before {
+	content: 'Admissions: ';
+	font-weight: bold;
+
+}
+
+.travel_addButton, .food_addButton, .event_addButton {
+	grid-column: 1;
+	grid-row: 4;
+	width: 80%;
+}
+
+/* Navigation Menu */
+.header_container {
+	height: 150px;
+	margin-bottom: -75px;
+}
+
+.nav_menu {
+	float: right;
+	margin: 15px;
+	min-width: 150px;
+}
+
+.nav_menu button div {
+	background-color: #B2EBF2 !important;
+	border: 3px solid #006064;
+	transition: 1s;
+}
+
+.nav_menu button div:hover {
+	background-color: #006064 !important;
+	border: 3px solid #00bcd1;
+}
+
+
+.header_logo--button {
+	display: inline-block;
+	margin: 7px 0 0 10px;
+	z-index: 9;
+	width: 105px;
+	height: 105px;
+	background: url('../img/Untitled-2.png');
+	background-size: cover;
+}
+
+.header_logo--button:hover {
+	transform: rotate(360deg);
+	transition: 2s;
+
 }
