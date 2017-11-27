@@ -1,3 +1,4 @@
+/* Login Page */
 .container {
   background-color: #ffffff;
 }
@@ -27,7 +28,7 @@
 	top: 850px;
 	font-size: 20px;
 	padding: 10px;
-	background: #006064;
+	background: tan;
 	color: white;
 	position:absolute;
 	width :300px;
@@ -35,16 +36,45 @@
   padding: 15px;
 }
 
+.authors_list {
+	display: grid;
+	grid-template-columns: [one] 25% [two] 25% [three] 25% [four] 25%;
+	justify-items: center;
+}
 
+.authors_list span {
+	font-size: 2rem;
+	color: tan;
+
+	font-weight: italic;
+}
 .about-us {
 	position: absolute;
 	top: 450px;
 	left: 10%;
 	width: 300px;
 	height: 375px;
-	background: #B2EBF2;
-	border: 3px solid tan;
-	color: #006064;
+	background: #c32231;
+	border: 3px solid;
+	border-color: #75757;
+	color: tan;
+}
+
+.main-about-us {
+	position: absolute;
+	top: 150px;
+	right: 5%;
+	width: 300px;
+	height: 375px;
+	background: #c32231;
+	border: 3px solid;
+	border-color: #75757;
+	box-shadow: 0 0 15px tan;
+	color: tan;
+}
+
+.about-us p {
+	padding: 10px;
 }
 
 .about-us h3 {
@@ -53,6 +83,15 @@
 	margin: 0 0 10px 0;
 }
 
+.main-about-us p {
+	padding: 10px;
+}
+
+.main-about-us h3 {
+	font-size: 2rem;
+	color: white;
+	margin: 0 0 10px 0;
+}
 
 /* budget component */
 .budget {
@@ -97,20 +136,20 @@ tbody td {
 	grid-template-columns: [one] 550px [two] auto;
 	grid-gap: 7px 25px;
 	grid-template-rows: [row-one] 100px [row-two] 15% [row-three] 25% [row-four] auto;
-	width: 97%;
+	width: 85%;
 	overflow: hidden;
-	margin: 15px;
+	margin: 15px auto;
 	padding: 0 25px 25px 0;
-	box-shadow: 0 5px 10px #777;
+	box-shadow: 0 0 15px #212121;
 	border-radius: 25px;
 }
 
 .travel_container:nth-child(odd), .food_container:nth-child(odd), .event_container:nth-child(odd) {
-	background: #F57F17;
+	background: #B0BEC5;
 }
 
 .travel_container:nth-child(even), .food_container:nth-child(even), .event_container:nth-child(even) {
-	background: #FFC107;
+	background: #E0E0E0;
 }
 
 .travelImg_container, .foodImg_container, .eventImg_container {
@@ -135,7 +174,6 @@ tbody td {
 }
 
 .travelImg_container:hover, .foodImg_container:hover, .eventImg_container:hover {
-transform: scale(1.5);
 transition: 1s;
 filter: sepia(60%);
 overflow: visible;
@@ -144,20 +182,20 @@ overflow: visible;
 .travel_title, .travel_perex, .travel_price, .travel_hours {
 	grid-column: 2;
 	overflow: hidden;
-	border-bottom: 1px solid white;
+	border-bottom: 2px solid white;
 
 }
 
 .food_title, .food_perex, .food_price, .food_hours {
 	grid-column: 2;
 	overflow: hidden;
-	border-bottom: 1px solid white;
+	border-bottom: 2px solid #212121;
 }
 
 .event_title, .event_perex, .event_price, .event_hours {
 	grid-column: 2;
 	overflow: hidden;
-	border-bottom: 1px solid white;
+	border-bottom: 2px solid #212121;
 }
 
 .travel_title, .food_title, .event_title {
@@ -199,10 +237,10 @@ overflow: visible;
 
 }
 
-.travel_addButton, .food_addButton, .event_addButton {
+.travel_addButton input, .food_addButton, .event_addButton {
 	grid-column: 1;
 	grid-row: 4;
-	width: 80%;
+
 }
 
 /* Navigation Menu */
@@ -218,14 +256,14 @@ overflow: visible;
 }
 
 .nav_menu button div {
-	background-color: #B2EBF2 !important;
+	background-color: tan !important;
 	border: 3px solid #006064;
 	transition: 1s;
 }
 
 .nav_menu button div:hover {
 	background-color: #006064 !important;
-	border: 3px solid #00bcd1;
+	border: 3px solid tan;
 }
 
 

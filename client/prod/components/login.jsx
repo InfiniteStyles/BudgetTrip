@@ -10,6 +10,15 @@ class Login extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      authors: [
+        'Anto Wiwarsono',
+        'Anton Shtylman',
+        'Jacob Seo',
+        'Luke Garner'
+      ]
+    }
+
     this.login = this.login.bind(this);
   }
 
@@ -54,6 +63,11 @@ class Login extends Component {
         <div className="logo_container"></div>
         <button className="login_button" onClick={this.login} >Login</button>
         <About />
+        <div className="authors_list">
+        {this.state.authors.map((author, i) => {
+          return <span key={i}>{author}</span>
+        })}
+        </div>
       </div>);
   }
 }

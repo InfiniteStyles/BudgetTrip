@@ -11,9 +11,11 @@ const style = {
     height: 500,
     width: 500,
     marginTop: 20,
-
     textAlign: 'center',
     paddingTop: 20,
+    borderTop: '5px solid tan',
+    borderRight: '5px solid tan',
+    borderLeft: '5px solid tan'
   },
   container: {
     marginLeft: 20,

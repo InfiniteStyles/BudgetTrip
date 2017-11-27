@@ -9,6 +9,7 @@ import Auth from '../../../Auth/Auth.js';
 import Profile from './Header_Helpers/Profile.jsx';
 import Budget from './Budget.jsx';
 import Activities from './Activities.jsx';
+import About from './About.jsx';
 
 const auth = new Auth();
 const style = {};
@@ -86,6 +87,7 @@ class App extends React.Component {
               <Header auth={auth} user={this.state.user} />
               <Search updateActivities={this.updateActivities} user={this.state.user} updateInput={this.updateInput} />
             </div>
+            <About displayStyle='mainPage'/>
             <Activities selector={this.addSelectActivity} activities={this.state.activities} user={this.state.user} />
             <Budget selectedTrip={this.state.selectedActivities} budget={this.state.input.budget} />
           </div>

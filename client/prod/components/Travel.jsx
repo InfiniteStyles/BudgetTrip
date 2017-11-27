@@ -14,7 +14,7 @@ const styles = {
   },
   paper: {
     margin: 20,
-    display: 'inline-block',
+
   },
 };
 

@@ -111,6 +111,7 @@ class Budget extends React.Component {
     let negativeStyle = {
       color: this.state.negative ? 'red' : 'black',
       textAlign: 'center',
+      backgroundColor: 'tan'
     };
     let selectedTrip = this.state.activities;
 
@@ -127,7 +128,7 @@ class Budget extends React.Component {
             adjustForCheckbox={this.state.table.showCheckboxes}
             enableSelectAll={this.state.table.enableSelectAll}>
             <TableRow>
-              <TableHeaderColumn style={negativeStyle} colSpan="3" tooltip="BudgetTrip">
+              <TableHeaderColumn style={negativeStyle} colSpan="4">
                 {
                   <h1>{`Total Budget: $${this.state.budgetTotal} Total Spent: $${this.state.moneySpent} Budget Left: $${
                     this.state.moneyLeft
