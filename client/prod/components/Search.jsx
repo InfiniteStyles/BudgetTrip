@@ -30,10 +30,12 @@ export default class Search extends React.Component {
   constructor(props) {
     super(props);
 
-    const minDate = new Date();
-    const maxDate = new Date();
-    minDate.setFullYear(minDate.getFullYear() - 1);
-    maxDate.setFullYear(maxDate.getFullYear() + 1);
+    let minDate = new Date();
+    let maxDate = new Date();
+    minDate = 0;
+    maxDate = 0;
+    // minDate.setFullYear(minDate.getFullYear() - 1);
+    // maxDate.setFullYear(maxDate.getFullYear() - 1);
 
     this.state = {
       budget: '',
@@ -43,6 +45,7 @@ export default class Search extends React.Component {
       lat: '',
       lng: '',
     };
+    
     this.onChange = input => {
       this.setState({ input });
     };
@@ -54,6 +57,8 @@ export default class Search extends React.Component {
     this.getTravel = this.getTravel.bind(this);
     this.getFood = this.getFood.bind(this);
     this.getEvents = this.getEvents.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.formatDate = this.formatDate.bind(this);
   }
 
   handleChangeMinDate(event, date) {
@@ -116,6 +121,38 @@ export default class Search extends React.Component {
     return axios.post('/api/search-data', data);
   }
 
+  handleSubmit(e) {
+    const data = {
+      budget: this.state.budget,
+    };
+    this.search(e);
+    this.props.updateInput(data);
+    this.setState({
+      budget: '',
+      location: '',
+      startDate: 0,
+      endDate: 0, 
+    });
+  }
+
+  formatDate(date) {
+    const days = {
+      0: "Sun",
+      1: "Mon",
+      2: "Tues",
+      3: "Wed",
+      4: "Thurs",
+      5: "Fri",
+      6: "Sat",
+    };
+
+    /*
+    Mon, Jan-19
+    */
+
+    const day = date.getDay();
+    return days[day] + ", " + date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate();
+  }
   search(event) {
     event.preventDefault();
     const data = {
@@ -162,6 +199,7 @@ export default class Search extends React.Component {
             />
             <TextField
               name="location"
+              placeholder=""
               floatingLabelText="Location"
               id="location"
               onChange={this.monitor}
@@ -173,6 +211,7 @@ export default class Search extends React.Component {
               autoOk={true}
               onChange={this.handleChangeMinDate}
               value={this.state.startDate}
+              formatDate={this.formatDate}
             />
             <DatePicker
               name="endDate"
@@ -180,14 +219,18 @@ export default class Search extends React.Component {
               autoOk={true}
               floatingLabelText="End Date"
               value={this.state.endDate}
+              formatDate={this.formatDate}
             />
             <RaisedButton
               label="Submit"
               primary={true}
-              onClick={function(e) {
-                self.search(e);
-                self.props.updateInput(data);
-              }}
+              onClick={
+                this.handleSubmit
+                // function(e) {
+                // self.search(e);
+                // self.props.updateInput(data);
+                // }
+              }
               style={style.button}
               value="Submit"
             />
