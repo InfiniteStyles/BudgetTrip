@@ -27,7 +27,7 @@ class Login extends Component {
         console.log('error', error, 'profile', profile);
 
         axios
-          .post('http://localhost:1130/api/signup', profile)
+          .post('/api/signup', profile)
           .then(function(sucess) {
             console.log('user data', sucess);
             window.location.reload();
