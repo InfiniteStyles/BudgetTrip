@@ -167,14 +167,14 @@ export default class Search extends React.Component {
 
     axios
       .all([this.getEvents(data), this.getFood(data), this.getTravel(data), this.saveData(data)])
-      .then(data => {
+      .then((data) => {
         const objForm = {};
         objForm.events = data[0].data;
         objForm.food = data[1].data;
         objForm.travel = data[2].data;
         this.props.updateActivities(objForm);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   }

@@ -116,6 +116,7 @@
 .top-section {
 	background: url('../img/Perone.jpg');
 	background-size: cover;
+	height: 100vh;
 }
 
 table {
