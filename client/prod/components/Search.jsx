@@ -127,6 +127,7 @@ export default class Search extends React.Component {
     };
     this.search(e);
     this.props.updateInput(data);
+    this.props.updateSearchStatus();
     this.setState({
       budget: '',
       location: '',
