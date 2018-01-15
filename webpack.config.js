@@ -26,5 +26,5 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
   ],
-  devtool: 'inline-source-map'
+  devtool: 'cheap-eval-source-map',
 };
