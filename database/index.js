@@ -26,7 +26,7 @@ var Users = new mongoose.Schema({
     end_date: Date,
     activities: [
       new mongoose.Schema({
-        name: { type: String, unique: true },
+        name: { type: String },
         description: String,
         price: Number,
       }),
